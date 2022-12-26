@@ -9,12 +9,24 @@ import { TouchableOpacity } from "react-native";
 
 import AllExpenseScreen from "../screens/AllExpenseScreen";
 import RecentExpenseScreen from "../screens/RecentExpenseScreen";
+import { Colors } from "../styles";
 import { HomeTabParamList, RootStackScreenProps } from "./types";
 
 const Tab = createBottomTabNavigator<HomeTabParamList>();
 
 const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: Colors.primary500,
+      },
+      headerTintColor: Colors.white,
+      tabBarStyle: {
+        backgroundColor: Colors.primary500,
+      },
+      tabBarActiveTintColor: Colors.accent500,
+    }}
+  >
     <Tab.Screen
       name="Recent Expense"
       component={RecentExpenseScreen}
@@ -26,7 +38,7 @@ const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
               navigation.navigate("ExpenseForm", { id: undefined });
             }}
           >
-            <AntDesign name="plus" size={24} color="black" />
+            <AntDesign name="plus" size={24} color={Colors.white} />
           </TouchableOpacity>
         ),
         tabBarIcon: ({ color, focused, size }) => (
