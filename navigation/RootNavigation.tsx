@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeTabs from "./HomeTabs";
+import React from "react";
+
 import ExpenseFormScreen from "../screens/ExpenseFormScreen";
+import HomeTabs from "./HomeTabs";
 import { RootStackParamList } from "./types";
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -25,5 +25,3 @@ const RootNavigation = () => {
 };
 
 export default RootNavigation;
-
-const styles = StyleSheet.create({});

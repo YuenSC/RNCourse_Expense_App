@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 const RecentExpenseScreen = () => {
   return (
@@ -10,5 +10,3 @@ const RecentExpenseScreen = () => {
 };
 
 export default RecentExpenseScreen;
-
-const styles = StyleSheet.create({});

@@ -5,7 +5,8 @@ import {
 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
+
 import AllExpenseScreen from "../screens/AllExpenseScreen";
 import RecentExpenseScreen from "../screens/RecentExpenseScreen";
 import { HomeTabParamList, RootStackScreenProps } from "./types";
@@ -54,5 +55,3 @@ const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
 );
 
 export default HomeTabs;
-
-const styles = StyleSheet.create({});
