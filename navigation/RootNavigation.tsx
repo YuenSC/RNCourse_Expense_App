@@ -1,21 +1,22 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Tabs from "./Tabs";
+import HomeTabs from "./HomeTabs";
 import ExpenseFormScreen from "../screens/ExpenseFormScreen";
+import { RootStackParamList } from "./types";
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const RootNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Tabs"
-        component={Tabs}
+        name="Home"
+        component={HomeTabs}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Expense Form"
+        name="ExpenseForm"
         component={ExpenseFormScreen}
         options={{ presentation: "modal", headerLeft: () => null }}
       />

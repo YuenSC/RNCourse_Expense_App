@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import Tabs from "./navigation/Tabs";
+import HomeTabs from "./navigation/HomeTabs";
 import "react-native-gesture-handler";
 import RootNavigation from "./navigation/RootNavigation";
 
