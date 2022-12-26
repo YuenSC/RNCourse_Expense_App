@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator<HomeTabParamList>();
 const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
   <Tab.Navigator>
     <Tab.Screen
-      name="RecentExpense"
+      name="Recent Expense"
       component={RecentExpenseScreen}
       options={{
         headerRight: () => (
@@ -38,7 +38,7 @@ const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
       }}
     />
     <Tab.Screen
-      name="AllExpense"
+      name="All Expense"
       component={AllExpenseScreen}
       options={{
         tabBarIcon: ({ color, focused, size }) => (

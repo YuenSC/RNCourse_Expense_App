@@ -14,8 +14,8 @@ export type RootStackScreenProps<T extends keyof RootStackParamList> =
   StackScreenProps<RootStackParamList, T>;
 
 export type HomeTabParamList = {
-  RecentExpense: undefined;
-  AllExpense: undefined;
+  "Recent Expense": undefined;
+  "All Expense": undefined;
 };
 
 export type HomeTabScreenProps<T extends keyof HomeTabParamList> =
