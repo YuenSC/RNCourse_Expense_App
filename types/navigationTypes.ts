@@ -6,28 +6,28 @@ import {
 import { StackScreenProps } from "@react-navigation/stack";
 
 /* RootStack Start */
-export type RootStackParamList = {
-  Home: NavigatorScreenParams<HomeTabParamList>;
+export type IRootStackParamList = {
+  Home: NavigatorScreenParams<IHomeTabParamList>;
   ExpenseForm: { id?: string };
 };
-export type RootStackScreenProps<T extends keyof RootStackParamList> =
-  StackScreenProps<RootStackParamList, T>;
+export type IRootStackScreenProps<T extends keyof IRootStackParamList> =
+  StackScreenProps<IRootStackParamList, T>;
 /* RootStack End*/
 
 /* HomeTab Start */
-export type HomeTabParamList = {
+export type IHomeTabParamList = {
   "Recent Expense": undefined;
   "All Expense": undefined;
 };
-export type HomeTabScreenProps<T extends keyof HomeTabParamList> =
+export type IHomeTabScreenProps<T extends keyof IHomeTabParamList> =
   CompositeScreenProps<
-    BottomTabScreenProps<HomeTabParamList, T>,
-    RootStackScreenProps<keyof RootStackParamList>
+    BottomTabScreenProps<IHomeTabParamList, T>,
+    IRootStackScreenProps<keyof IRootStackParamList>
   >;
 /* HomeTab End */
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends IRootStackParamList {}
   }
 }

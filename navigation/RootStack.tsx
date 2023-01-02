@@ -1,11 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import ExpenseFormScreen from "@screens/ExpenseFormScreen";
-import { RootStackParamList } from "@types";
+import { IRootStackParamList } from "@types";
 import React from "react";
 
 import HomeTabs from "./HomeTabs";
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<IRootStackParamList>();
 
 const RootStack = () => {
   return (

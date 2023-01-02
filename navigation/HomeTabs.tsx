@@ -11,13 +11,13 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 
 import {
-  HomeTabParamList,
-  RootStackScreenProps,
+  IHomeTabParamList,
+  IRootStackScreenProps,
 } from "../types/navigationTypes";
 
-const Tab = createBottomTabNavigator<HomeTabParamList>();
+const Tab = createBottomTabNavigator<IHomeTabParamList>();
 
-const HomeTabs = ({ navigation }: RootStackScreenProps<"Home">) => (
+const HomeTabs = ({ navigation }: IRootStackScreenProps<"Home">) => (
   <Tab.Navigator
     screenOptions={{
       headerStyle: {
