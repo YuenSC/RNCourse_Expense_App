@@ -1,17 +1,23 @@
 import { Colors } from "@styles";
+import { IExpense } from "@types";
 import { formatDollar } from "@utils/formatDollar";
-import React from "react";
+import React, { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 interface IExpenseSummaryProps {
-  amount: number;
+  expenses: IExpense[];
 }
 
-const ExpenseSummary = ({ amount }: IExpenseSummaryProps) => {
+const ExpenseSummary = ({ expenses }: IExpenseSummaryProps) => {
+  const totalExpenseAmount = useMemo(
+    () => Math.round(expenses.reduce((prev, curr) => curr.amount + prev, 0)),
+    [expenses]
+  );
+
   return (
     <View style={styles.container}>
       <Text style={[styles.text]}>Total</Text>
-      <Text style={[styles.text]}>{formatDollar(amount)}</Text>
+      <Text style={[styles.text]}>{formatDollar(totalExpenseAmount)}</Text>
     </View>
   );
 };
