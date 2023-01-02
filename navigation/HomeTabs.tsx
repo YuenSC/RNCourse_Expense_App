@@ -4,13 +4,16 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import AllExpenseScreen from "@screens/AllExpenseScreen";
+import RecentExpenseScreen from "@screens/RecentExpenseScreen";
+import { Colors } from "@styles";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 
-import AllExpenseScreen from "../screens/AllExpenseScreen";
-import RecentExpenseScreen from "../screens/RecentExpenseScreen";
-import { Colors } from "../styles";
-import { HomeTabParamList, RootStackScreenProps } from "./types";
+import {
+  HomeTabParamList,
+  RootStackScreenProps,
+} from "../types/navigationTypes";
 
 const Tab = createBottomTabNavigator<HomeTabParamList>();
 
