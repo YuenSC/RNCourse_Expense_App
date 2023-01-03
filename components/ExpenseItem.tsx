@@ -3,16 +3,24 @@ import { IExpense } from "@types";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const ExpenseItem = (props: IExpense) => {
+const ExpenseItem = ({ amount, createAt, name }: IExpense) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={[styles.whiteText, styles.bold]}>Test</Text>
-        <Text style={[styles.whiteText]}>2022-5-19</Text>
+        <Text style={[styles.whiteText, styles.bold]}>{name}</Text>
+        <Text style={[styles.whiteText]}>
+          {new Date(createAt).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </Text>
       </View>
 
       <View style={styles.amountContainer}>
-        <Text style={[styles.amountText, styles.bold]}>19.99</Text>
+        <Text style={[styles.amountText, styles.bold]}>
+          {Math.round(amount * 100) / 100}
+        </Text>
       </View>
     </View>
   );
@@ -31,12 +39,14 @@ const styles = StyleSheet.create({
   },
 
   amountContainer: {
+    minWidth: 70,
     backgroundColor: Colors.white,
     borderRadius: 8,
     justifyContent: "center",
     padding: 10,
   },
   amountText: {
+    textAlign: "center",
     color: Colors.primary500,
   },
 

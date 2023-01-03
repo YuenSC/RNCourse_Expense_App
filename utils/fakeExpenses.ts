@@ -2,6 +2,7 @@ import { IExpense } from "@types";
 
 const createFakeExpense = (index: number): IExpense => {
   return {
+    id: index.toString(),
     amount: Math.random() * 100,
     name: "Item" + index,
     createAt: new Date().toISOString(),

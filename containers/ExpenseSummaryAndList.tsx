@@ -1,10 +1,11 @@
 import ExpenseItem from "@components/ExpenseItem";
 import ExpenseSummary from "@components/ExpenseSummary";
+import { useNavigation } from "@react-navigation/native";
 import { Colors } from "@styles";
 import { IExpense } from "@types";
 import { fakeExpenses } from "@utils/fakeExpenses";
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, View } from "react-native";
 
 interface IExpenseSummaryAndListProps {
   expenses: IExpense[];
@@ -15,6 +16,7 @@ const ExpenseSummaryAndList = ({
   expenses,
   periodName,
 }: IExpenseSummaryAndListProps) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.summary}>
@@ -24,7 +26,13 @@ const ExpenseSummaryAndList = ({
       <FlatList
         data={expenses}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-        renderItem={({ item }) => <ExpenseItem {...item} />}
+        renderItem={({ item }) => (
+          <Pressable
+            onPress={() => navigation.navigate("ExpenseForm", { id: item.id })}
+          >
+            <ExpenseItem {...item} />
+          </Pressable>
+        )}
       />
     </View>
   );
