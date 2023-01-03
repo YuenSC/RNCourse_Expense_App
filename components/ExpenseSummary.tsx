@@ -6,9 +6,10 @@ import { StyleSheet, Text, View } from "react-native";
 
 interface IExpenseSummaryProps {
   expenses: IExpense[];
+  periodName: string;
 }
 
-const ExpenseSummary = ({ expenses }: IExpenseSummaryProps) => {
+const ExpenseSummary = ({ expenses, periodName }: IExpenseSummaryProps) => {
   const totalExpenseAmount = useMemo(
     () => Math.round(expenses.reduce((prev, curr) => curr.amount + prev, 0)),
     [expenses]
@@ -16,7 +17,7 @@ const ExpenseSummary = ({ expenses }: IExpenseSummaryProps) => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.text]}>Total</Text>
+      <Text style={[styles.text]}>{periodName}</Text>
       <Text style={[styles.text]}>{formatDollar(totalExpenseAmount)}</Text>
     </View>
   );

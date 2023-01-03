@@ -1,12 +1,9 @@
+import ExpenseSummaryAndList from "@containers/ExpenseSummaryAndList";
+import { fakeExpenses } from "@utils/fakeExpenses";
 import React from "react";
-import { Text, View } from "react-native";
 
 const AllExpenseScreen = () => {
-  return (
-    <View>
-      <Text>AllExpenseScreen</Text>
-    </View>
-  );
+  return <ExpenseSummaryAndList expenses={fakeExpenses} periodName="Total" />;
 };
 
 export default AllExpenseScreen;
